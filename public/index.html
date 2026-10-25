@@ -85,6 +85,103 @@ footer .wrap{padding-block:26px}
 #search .seclinks a{background:linear-gradient(135deg,#eef7d4,#dff0b7);box-shadow:var(--d1),var(--ring)}
 @media (prefers-reduced-motion:reduce){.card,.pick,.prod,.prod .im img{transition:none}}
 
+/* ===== Luxe layer: jewel tones, metallics, asymmetric shapes ===== */
+:root{
+  --gold:#c9a227; --gold2:#f1d77a; --gold3:#8a6a10; --silver:#c7ccd2; --silver2:#f3f5f7; --silver3:#8e979f; --graphite:#2b2f33; --ivory:#fbf8f2;
+  --burgundy:#6e1430; --burgundy2:#9c2a4a; --emerald:#0d6b47; --emerald2:#1f9a6a; --sapphire:#163e8a; --sapphire2:#2a63c9;
+  --metal-gold:linear-gradient(135deg,#8a6a10 0%,#c9a227 25%,#f7e39a 50%,#c9a227 75%,#8a6a10 100%);
+  --metal-silver:linear-gradient(135deg,#8e979f 0%,#d9dee3 25%,#ffffff 50%,#d9dee3 75%,#8e979f 100%);
+  --bg:var(--ivory); --fg:#1d1f22; --muted:#5e646b; --line:#e4e1da; --green:var(--emerald); --green-soft:#e6f2ec; --accent:var(--emerald); --lime:var(--gold);
+  --cat:var(--emerald); --cat2:var(--emerald2); --cat-rgb:13,107,71;
+}
+#lights{--cat:#8a6a10;--cat2:#c9a227;--cat-rgb:138,106,16}
+#sensors{--cat:var(--sapphire);--cat2:var(--sapphire2);--cat-rgb:22,62,138}
+#greenhouses{--cat:var(--emerald);--cat2:var(--emerald2);--cat-rgb:13,107,71}
+#hydro{--cat:var(--burgundy);--cat2:var(--burgundy2);--cat-rgb:110,20,48}
+#about{--cat:#3a3f45;--cat2:#6b7177;--cat-rgb:58,63,69}
+body{background:
+  radial-gradient(1000px 600px at -10% -10%, rgba(201,162,39,.16) 0%, transparent 55%),
+  radial-gradient(900px 500px at 110% 0%, rgba(22,62,138,.12) 0%, transparent 55%),
+  radial-gradient(900px 600px at 50% 110%, rgba(110,20,48,.12) 0%, transparent 55%),
+  linear-gradient(180deg,#fcfaf5 0%,#f6f3ec 100%);background-attachment:fixed}
+/* header: graphite glass with gold rule */
+header{background:linear-gradient(180deg,rgba(43,47,51,.96),rgba(35,38,42,.94));backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,162,39,.55);box-shadow:0 10px 30px -14px rgba(0,0,0,.5)}
+header::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:3px;background:var(--metal-gold)}
+header{position:sticky}
+.brand{color:#fff}
+.brand span{background:var(--metal-gold);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand i svg{box-shadow:0 6px 16px -4px rgba(201,162,39,.8),0 0 0 1px rgba(255,255,255,.3) inset}
+nav a{color:#cfd4d9}
+nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+nav a[aria-current="page"]{background:var(--metal-gold);color:#2b2f33;box-shadow:0 8px 18px -8px rgba(201,162,39,.9)}
+.lang{background:transparent;color:var(--gold2);border:1px solid rgba(201,162,39,.7);box-shadow:none}
+.search{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);box-shadow:none}
+.search input{color:#fff}.search input::placeholder{color:#aab1b8}.search svg{color:#cfd4d9}
+.qbtn{background:var(--metal-gold);color:#2b2f33;box-shadow:0 8px 18px -8px rgba(201,162,39,.9)}
+/* hero */
+#home h1{background:linear-gradient(90deg,var(--emerald) 0%,var(--gold) 40%,var(--burgundy) 75%,var(--sapphire) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{background:rgba(var(--cat-rgb),.08);color:var(--cat);border:1px solid rgba(var(--cat-rgb),.25)}
+.eyebrow::before{background:var(--metal-gold);box-shadow:0 0 0 3px rgba(201,162,39,.2)}
+h2::after{background:var(--metal-gold);height:3px;width:56px}
+/* home cards: ivory with silver bevel and jewel corner */
+.card{background:linear-gradient(160deg,#ffffff 0%,#f7f4ed 100%);border:1px solid #e6e2d8;border-radius:22px 22px 22px 6px;box-shadow:0 18px 40px -22px rgba(0,0,0,.35),0 0 0 1px #fff inset}
+.card::before{background:linear-gradient(90deg,var(--cat),var(--cat2));height:6px}
+.card::after{background:radial-gradient(circle,rgba(var(--cat-rgb),.22),transparent 65%)}
+.card .t{color:var(--cat)}
+.card[href="#lights"]{--cat:#8a6a10;--cat2:#c9a227;--cat-rgb:138,106,16}.card[href="#sensors"]{--cat:var(--sapphire);--cat2:var(--sapphire2);--cat-rgb:22,62,138}.card[href="#greenhouses"]{--cat:var(--emerald);--cat2:var(--emerald2);--cat-rgb:13,107,71}.card[href="#hydro"]{--cat:var(--burgundy);--cat2:var(--burgundy2);--cat-rgb:110,20,48}.card[href="#about"]{--cat:#3a3f45;--cat2:#6b7177;--cat-rgb:58,63,69}
+.method div{border-radius:6px 18px 18px 18px;background:#fff}
+.method div:nth-child(1){--cat:#8a6a10;--cat2:#c9a227}.method div:nth-child(2){--cat:var(--sapphire);--cat2:var(--sapphire2)}.method div:nth-child(3){--cat:var(--emerald);--cat2:var(--emerald2)}.method div:nth-child(4){--cat:var(--burgundy);--cat2:var(--burgundy2)}
+.method div::before{background:linear-gradient(90deg,var(--cat),var(--cat2))}
+/* team */
+.person{background:linear-gradient(145deg,#ffffff,#f6f2ea);border:1px solid #e6e2d8;border-radius:26px 8px 26px 8px}
+.person::before{background:var(--metal-gold)}
+.person .rl{color:var(--gold3)}
+.person .ph{border:2px solid #fff;box-shadow:0 12px 26px -12px rgba(0,0,0,.5),0 0 0 1px var(--silver)}
+/* picks: dark jewel glass, gold lettering, asymmetric */
+.pick{background:linear-gradient(150deg,var(--cat) 0%,rgba(var(--cat-rgb),.86) 60%,#1d1f22 140%);color:#f6f1e7;border:1px solid rgba(255,255,255,.14);border-radius:28px 10px 28px 10px;box-shadow:0 24px 50px -24px rgba(var(--cat-rgb),.75),0 0 0 1px rgba(255,255,255,.08) inset;padding:20px 20px 22px}
+.pick::before{display:none}
+.pick::after{background:radial-gradient(circle,rgba(255,255,255,.25),transparent 65%);width:180px;height:180px;right:-70px;top:-80px}
+.pick .k{background:var(--metal-gold);color:#2b2f33;letter-spacing:.08em;box-shadow:0 4px 10px -4px rgba(0,0,0,.5)}
+.pick .m{color:#fff;font-size:18px}
+.pick .why{color:rgba(255,255,255,.82)}
+.pick:hover{box-shadow:0 30px 60px -24px rgba(var(--cat-rgb),.9),0 0 0 1px rgba(255,255,255,.14) inset}
+[dir="rtl"] .pick{border-radius:10px 28px 10px 28px}
+/* note: ivory parchment with gold bar and silver frame */
+.note{background:linear-gradient(160deg,#fffdf7,#f8f1e2);border:1px solid #e6dcc3;border-radius:8px 22px 22px 22px;box-shadow:0 14px 30px -20px rgba(0,0,0,.35),0 0 0 1px #fff inset;color:#2b2f33}
+.note::before{background:var(--metal-gold);width:7px;border-radius:8px 0 0 22px}
+.note b{color:var(--gold3)}
+[dir="rtl"] .note{border-radius:22px 8px 22px 22px}
+[dir="rtl"] .note::before{border-radius:0 8px 22px 0}
+/* product cards: silver bevel, jewel header line, sheen */
+.prod{background:linear-gradient(180deg,#ffffff,#faf8f3);border:1px solid #e2dfd7;border-radius:18px 18px 26px 26px;box-shadow:0 18px 40px -22px rgba(0,0,0,.35),0 0 0 1px #fff inset}
+.prod::before{height:5px;background:linear-gradient(90deg,var(--cat),var(--cat2),var(--cat))}
+.prod .im{background:radial-gradient(circle at 50% 35%,#ffffff 0%,#f1efe9 70%,#e9e6df 100%);border-bottom:1px solid #e6e2d8;position:relative}
+.prod .im::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--metal-silver)}
+.prod .n{color:#1d1f22}
+.prod .chip{background:var(--silver2);color:#3a3f45;border:1px solid var(--silver)}
+.prod .pr{color:var(--cat);font-size:16px}
+.prod .thumbs img[aria-current="true"]{border-color:var(--gold)}
+.prod:hover{box-shadow:0 30px 60px -24px rgba(var(--cat-rgb),.55),0 0 0 1px #fff inset}
+details.spec summary{color:var(--cat)}
+th{background:linear-gradient(180deg,#f7f5f0,#efece5);color:#3a3f45}
+.tablewrap{border:1px solid #e2dfd7}
+/* buttons, lightbox, contact, footer */
+.lbx{background:var(--metal-gold);color:#2b2f33}
+.lbc{border-radius:28px 12px 28px 12px;border:1px solid var(--silver)}
+.lbc .info .pr{color:var(--gold3)}
+.lbc dt{color:var(--silver3)}
+.ccard{background:linear-gradient(145deg,#ffffff,#f6f2ea);border:1px solid #e6e2d8;border-radius:8px 26px 26px 26px}
+.ccard .rl{color:var(--gold3)}
+.ccard .row svg{background:var(--metal-gold);color:#2b2f33}
+#search .seclinks a{background:var(--metal-silver);color:#2b2f33;border:1px solid var(--silver)}
+footer{background:linear-gradient(135deg,#1d1f22 0%,#3a1020 55%,#6e1430 100%);color:#e9e4da;border-top:0;position:relative}
+footer::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--metal-gold)}
+footer a{color:var(--gold2)}
+/* sheen animation on metallic surfaces */
+@keyframes sheen{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+.pick .k,.qbtn,nav a[aria-current="page"],h2::after,.prod .im::after{background-size:200% auto;animation:sheen 6s linear infinite}
+@media (prefers-reduced-motion:reduce){.pick .k,.qbtn,nav a[aria-current="page"],h2::after,.prod .im::after{animation:none}}
+
 </style>
 <title>GrowTest</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&family=Cairo:wght@400;600;800&family=Noto+Naskh+Arabic:wght@400;600&display=swap">
