@@ -12,3 +12,5 @@ Grow-gear reviews written on published numbers (PPF, µmol/J, VWC accuracy, ligh
 
 ## Editing
 Change `public/index.html`, open a pull request, merge → live within a minute.
+
+Deployed via Cloudflare Workers Builds from GitHub (connected 2026-10-24).
