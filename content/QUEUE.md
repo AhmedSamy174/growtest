@@ -1,6 +1,6 @@
 # Article queue (one per week, Mondays)
 
-1. Drip irrigation kits, emitters, filters and pressure regulators — reviewed by Eng. Osama Samy (Arabic first, then English)
+1. Drip irrigation kits, emitters, filters and pressure regulators — reviewed by Eng. Osama Samy (Arabic first, then English) — DONE 2026-10-26 (section #drip)
 2. DLI / watts-per-plant calculator page (interactive)
 3. How to measure PPFD with a $30 quantum/lux meter (and when lux is wrong)
 4. Smart irrigation timers and controllers (Rachio, Orbit B-hyve, Netro) — Osama
