@@ -182,6 +182,19 @@ footer a{color:var(--gold2)}
 .pick .k,.qbtn,nav a[aria-current="page"],h2::after,.prod .im::after{background-size:200% auto;animation:sheen 6s linear infinite}
 @media (prefers-reduced-motion:reduce){.pick .k,.qbtn,nav a[aria-current="page"],h2::after,.prod .im::after{animation:none}}
 
+
+/* Decision tables, glossary */
+.decide table{min-width:860px}
+.decide th:first-child,.decide td:first-child{min-width:140px}
+.decide td{font-size:13.5px;line-height:1.5}
+.decide td:last-child{font-weight:700;color:var(--cat)}
+.terms{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:20px 0}
+.term{background:linear-gradient(180deg,#ffffff,#faf8f3);border:1px solid #e2dfd7;border-radius:8px 22px 22px 22px;padding:16px 18px;box-shadow:0 14px 30px -20px rgba(0,0,0,.3),0 0 0 1px #fff inset;min-width:0}
+.term .t{font-family:var(--display);font-weight:800;font-size:17px;color:var(--cat);margin-bottom:6px}
+.term p{margin:0;font-size:15px;color:#3a3f45}
+#glossary{--cat:#163e8a;--cat2:#2a63c9;--cat-rgb:22,62,138}
+.card[href="#glossary"]{--cat:#163e8a;--cat2:#2a63c9;--cat-rgb:22,62,138}
+ol{padding-inline-start:22px}ol li{margin:6px 0;max-width:68ch}
 </style>
 <title>GrowTest</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&family=Cairo:wght@400;600;800&family=Noto+Naskh+Arabic:wght@400;600&display=swap">
@@ -383,6 +396,7 @@ details.spec[open] summary::before{content:"▾ ";}
     <a href="#sensors" data-en="Soil sensors" data-ar="حساسات التربة">Soil sensors</a>
     <a href="#greenhouses" data-en="Greenhouse kits" data-ar="الصوب">Greenhouse kits</a>
     <a href="#hydro" data-en="Hydroponics" data-ar="الزراعة المائية">Hydroponics</a>
+    <a href="#glossary" data-en="Glossary" data-ar="المصطلحات">Glossary</a>
     <a href="#about" data-en="About" data-ar="من نحن">About</a>
     <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" autocomplete="off" placeholder="Search products…" data-en-ph="Search products…" data-ar-ph="ابحث عن منتج…" aria-label="Search"><button type="button" id="qbtn" class="qbtn" data-en="Search" data-ar="بحث">Search</button></label>
     <button class="lang" id="langbtn" type="button" aria-label="Switch language">العربية</button>
@@ -408,6 +422,7 @@ details.spec[open] summary::before{content:"▾ ";}
     <a class="card" href="#greenhouses"><span class="n">03 · Structures</span><span class="t">Backyard greenhouse kits</span><span class="d">PE film vs twin-wall polycarbonate, explained with transmission and U-values. Seven kits, $95 to $6,900.</span></a>
     <a class="card" href="#hydro"><span class="n">04 · Soilless</span><span class="t">Home hydroponic systems</span><span class="d">Countertop to tower. Watts per plant, reservoir size, and why pump-less systems fail less.</span></a>
     <a class="card" href="#about"><span class="n">05 · Coming next</span><span class="t">Drip irrigation and timers</span><span class="d">Emitters, filters, pressure regulators and smart timers, reviewed by an irrigation O&amp;M engineer. In preparation.</span></a>
+    <a class="card" href="#glossary"><span class="n">Reference</span><span class="t">The numbers, explained</span><span class="d">PPFD, DLI, VPD, VWC, bulk vs pore EC, ET₀ and Kc: what each measures, the range that matters, and the mistake people make without it.</span></a>
   </div>
 
   <h2>How products are tested here</h2>
@@ -433,6 +448,7 @@ details.spec[open] summary::before{content:"▾ ";}
     <a class="card" href="#greenhouses"><span class="n">03 · المنشآت</span><span class="t">الصوب المنزلية الجاهزة</span><span class="d">غطاء البولي إيثيلين مقابل البولي كربونات مزدوج الجدار، مشروحًا بنفاذية الضوء ومعامل فقد الحرارة. سبع صوب من 95 إلى 6,900 دولار.</span></a>
     <a class="card" href="#hydro"><span class="n">04 · بدون تربة</span><span class="t">أنظمة الزراعة المائية المنزلية</span><span class="d">من سطح المطبخ إلى البرج الرأسي. الواط لكل نبات، حجم الخزان، ولماذا تفشل الأنظمة بلا مضخة أقل.</span></a>
     <a class="card" href="#about"><span class="n">05 · قريبًا</span><span class="t">الري بالتنقيط والمؤقتات</span><span class="d">النقاطات والفلاتر ومنظمات الضغط والمؤقتات الذكية، بمراجعة مهندس تشغيل وصيانة شبكات ري. قيد الإعداد.</span></a>
+    <a class="card" href="#glossary"><span class="n">مرجع</span><span class="t">الأرقام مشروحة</span><span class="d">PPFD وDLI وVPD وVWC وEC الكلي مقابل ماء المسام وET₀ وKc: ماذا يقيس كل منها، والمدى المهم، والخطأ الذي يقع فيه الناس من دونه.</span></a>
   </div>
 
   <h2>كيف نختبر المنتجات هنا</h2>
@@ -484,6 +500,8 @@ details.spec[open] summary::before{content:"▾ ";}
   <h2>What I would skip</h2>
   <p>Any fixture that does not publish PPF. "Full spectrum" and "Samsung diodes" are not measurements. Viparspectra's XS1500 Pro may be fine, but there is no way to compare it, so it does not get a recommendation.</p>
 
+  <h2>How to decide with these numbers</h2>
+  <div class="tablewrap decide"><table><thead><tr><th>Metric</th><th>Common practice</th><th>What the number adds</th><th>Scientific basis</th><th>Expected effect</th></tr></thead><tbody><tr><td><b>PPFD at canopy</b></td><td>Buy by watts or by "covers 3×3 ft" claims</td><td>Photons per m² per second actually reaching leaves</td><td>Photosynthesis responds to photon flux, not watts; leafy greens saturate near 400–600, fruiting crops use 600–1,000 µmol/m²/s</td><td>Right fixture size the first time; no stretched or scorched plants</td></tr><tr><td><b>DLI (mol/m²/day)</b></td><td>Run lights "16 hours on"</td><td>Daily photon dose = PPFD × hours × 0.0036</td><td>Each crop has a DLI target (lettuce 12–17, tomato 20–30); above it, extra light is wasted electricity</td><td>Fewer hours at the same yield; 10–30% lower power bill</td></tr><tr><td><b>Efficacy (µmol/J)</b></td><td>Compare price tags</td><td>Photons per joule of electricity</td><td>A 2.8 µmol/J fixture emits 20% more light than a 2.3 one for the same bill</td><td>The cheaper light is often the expensive one over a year</td></tr><tr><td><b>Spectrum (far-red 730 nm, UV-A)</b></td><td>"Full spectrum" sticker</td><td>Which wavelengths are present and in what ratio</td><td>Far-red accelerates flowering and stem extension (Emerson effect); blue-heavy spectra keep plants compact</td><td>Choose by crop stage: blue-rich for seedlings, far-red for flowering</td></tr></tbody></table></div>
   <p class="src">Sources: manufacturer product pages at spider-farmer.com, mars-hydro.com, acinfinity.com, viparspectra.com, barrina-led.com (specs and prices, Oct 24, 2026). Affiliate links not yet active.</p>
 </div>
 <div class="l" data-lang="ar" dir="rtl">
@@ -523,6 +541,8 @@ details.spec[open] summary::before{content:"▾ ";}
   <h2>ما الذي أتجنبه</h2>
   <p>أي وحدة لا تنشر PPF. «طيف كامل» و«دايودات سامسونج» ليست قياسات. قد تكون Viparspectra XS1500 Pro جيدة، لكن لا سبيل لمقارنتها، لذا لا تحصل على توصية.</p>
 
+  <h2>كيف تتخذ القرار بهذه الأرقام</h2>
+  <div class="tablewrap decide"><table><thead><tr><th>المؤشر</th><th>الممارسة الشائعة</th><th>ما تضيفه القراءة</th><th>الأساس العلمي</th><th>الأثر المتوقع</th></tr></thead><tbody><tr><td><b>PPFD عند سطح النبات</b></td><td>الشراء بالواط أو بعبارة «يغطي 90×90 سم»</td><td>الفوتونات التي تصل فعلاً لكل متر مربع في الثانية</td><td>البناء الضوئي يستجيب لتدفق الفوتونات لا للواط؛ الورقيات تتشبع قرب 400–600 والمثمرات تستفيد حتى 600–1,000 µmol/m²/s</td><td>مقاس الوحدة صحيح من أول مرة؛ لا نباتات متطاولة ولا محترقة</td></tr><tr><td><b>DLI (mol/m²/يوم)</b></td><td>تشغيل الإضاءة «16 ساعة»</td><td>الجرعة الضوئية اليومية = PPFD × الساعات × 0.0036</td><td>لكل محصول هدف DLI (الخس 12–17، الطماطم 20–30)؛ فوقه الضوء الزائد كهرباء مهدرة</td><td>ساعات أقل بنفس الإنتاج؛ فاتورة أقل 10–30%</td></tr><tr><td><b>الكفاءة (µmol/J)</b></td><td>مقارنة السعر فقط</td><td>الفوتونات لكل جول كهرباء</td><td>وحدة 2.8 µmol/J تعطي ضوءًا أكثر بـ 20% من وحدة 2.3 بنفس الفاتورة</td><td>المصباح الأرخص غالبًا هو الأغلى على مدار السنة</td></tr><tr><td><b>الطيف (أحمر بعيد 730 نم، UV-A)</b></td><td>ملصق «طيف كامل»</td><td>أي أطوال موجية موجودة وبأي نسبة</td><td>الأحمر البعيد يعجّل الإزهار والاستطالة (تأثير إمرسون)؛ الطيف الغني بالأزرق يبقي النبات متراصًا</td><td>الاختيار حسب المرحلة: أزرق للشتلات، أحمر بعيد للإزهار</td></tr></tbody></table></div>
   <p class="src">المصادر: صفحات المنتجات على spider-farmer.com وmars-hydro.com وacinfinity.com وviparspectra.com وbarrina-led.com (المواصفات والأسعار، 24 أكتوبر 2026). روابط الشراء لم تُفعَّل بعد.</p>
 </div>
 </section>
@@ -568,6 +588,19 @@ details.spec[open] summary::before{content:"▾ ";}
   <h2>Two products that do not exist</h2>
   <p>Several listicles recommend a "Govee soil sensor" and a "Rachio soil sensor." Govee sells no soil-moisture product; Rachio sells irrigation controllers that accept wired contact-closure sensors, not a sensor. Neither appears here.</p>
 
+  <h2>How to decide with these numbers</h2>
+  <div class="tablewrap decide"><table><thead><tr><th>Metric</th><th>Common practice</th><th>What the number adds</th><th>Scientific basis</th><th>Expected effect</th></tr></thead><tbody><tr><td><b>Soil moisture (VWC)</b></td><td>Water on a fixed schedule</td><td>Water when the root zone reaches the allowed depletion for the crop</td><td>Plants draw water between field capacity and the management allowable depletion; past it, stomata close and growth stops</td><td>15–30% less water, no drought stress, fewer root diseases</td></tr><tr><td><b>Bulk EC</b></td><td>Lab soil test twice a season, or after symptoms</td><td>Salinity trend in the root zone every hour</td><td>Rising bulk EC means salts are accumulating; an osmotic potential that competes with roots for water</td><td>Leaching irrigation at the right time instead of after yield loss</td></tr><tr><td><b>Soil temperature</b></td><td>Rarely tracked</td><td>Root-zone temperature during germination and spring growth</td><td>Root growth, nutrient uptake and microbial activity all follow soil temperature; cold roots cannot take up phosphorus</td><td>Sow and transplant on the right day; explain slow spring growth</td></tr><tr><td><b>Multi-depth profile (20/40/60 cm)</b></td><td>One sensor, or none</td><td>Shows whether water reached the roots, stopped above them, or drained below</td><td>Wetting-front depth tells you if the irrigation dose matched root depth</td><td>Irrigation dose set by evidence, no over-draining of fertilizer</td></tr></tbody></table></div>
+  <h2>Calibrate a cheap capacitance sensor in 30 minutes</h2>
+  <p>Factory curves assume a generic mineral soil. Egyptian sandy and calcareous soils, and every potting mix, read differently. One short calibration turns a relative gauge into a number you can act on.</p>
+  <ol>
+    <li>Take about 1 kg of the soil you will monitor. Dry it in an oven at 105 °C for 24 h (or in the sun for 3 days, then 2 h in a kitchen oven at the lowest setting). Weigh it: this is the dry mass.</li>
+    <li>Insert the sensor fully into the dry soil in a container of known volume (a 1 L measuring jug works). Record the reading: this is your 0% point.</li>
+    <li>Add 100 mL of water, mix well, wait 10 minutes, reinsert the sensor, record the reading. 100 mL in 1 L of soil is 10% volumetric water content.</li>
+    <li>Repeat in 100 mL steps up to about 40% (sand) or 50% (potting mix). Stop when free water pools.</li>
+    <li>Plot sensor reading against % VWC. Fit a straight line (or a quadratic for potting mix) in Excel or R; that equation is your calibration.</li>
+    <li>Set the app endpoints (dry/wet) or convert readings with your equation. Recalibrate when you change the mix or after a season of fertilizer.</li>
+  </ol>
+  <p>Fertilizer changes the result for resistive probes and slightly for capacitance ones; calibrate with the soil at its normal salinity. Research-grade sensors (TEROS 10/12) ship with ±0.03 m³/m³ generic accuracy and reach ±0.01–0.02 with exactly this procedure.</p>
   <p class="src">Sources: shop.ecowitt.com, netrohome.com, metergroup.com, vegetronix.com, delta-t.co.uk, tindie.com; prices Oct 24, 2026. Affiliate links not yet active.</p>
 </div>
 <div class="l" data-lang="ar" dir="rtl">
@@ -609,6 +642,19 @@ details.spec[open] summary::before{content:"▾ ";}
   <h2>منتجان غير موجودين</h2>
   <p>تنصح عدة قوائم بـ «حساس تربة من Govee» و«حساس تربة من Rachio». Govee لا تبيع أي حساس رطوبة تربة، وRachio تبيع وحدات تحكم ري تقبل حساسات سلكية، لا حساسًا. لم يُدرج أيهما هنا.</p>
 
+  <h2>كيف تتخذ القرار بهذه الأرقام</h2>
+  <div class="tablewrap decide"><table><thead><tr><th>المؤشر</th><th>الممارسة الشائعة</th><th>ما تضيفه القراءة</th><th>الأساس العلمي</th><th>الأثر المتوقع</th></tr></thead><tbody><tr><td><b>رطوبة التربة (VWC)</b></td><td>الري بجدول ثابت</td><td>الري عندما تصل منطقة الجذور إلى حد الاستنزاف المسموح للمحصول</td><td>النبات يسحب الماء بين السعة الحقلية وحد الاستنزاف المسموح؛ بعده تغلق الثغور ويتوقف النمو</td><td>ماء أقل بنسبة 15–30%، لا إجهاد جفاف، أمراض جذور أقل</td></tr><tr><td><b>الملوحة الكلية (Bulk EC)</b></td><td>تحليل تربة معملي مرتين في الموسم أو بعد ظهور الأعراض</td><td>اتجاه الملوحة في منطقة الجذور كل ساعة</td><td>ارتفاع EC يعني تراكم أملاح وجهدًا أسموزيًا ينافس الجذور على الماء</td><td>ري غسيل في التوقيت الصحيح بدلاً من بعد خسارة الإنتاج</td></tr><tr><td><b>حرارة التربة</b></td><td>نادرًا ما تُتابع</td><td>حرارة منطقة الجذور أثناء الإنبات والنمو الربيعي</td><td>نمو الجذور وامتصاص العناصر ونشاط الكائنات الدقيقة كلها تتبع حرارة التربة؛ الجذور الباردة لا تمتص الفوسفور</td><td>زراعة وشتل في اليوم الصحيح؛ تفسير بطء النمو الربيعي</td></tr><tr><td><b>القياس على أكثر من عمق (20/40/60 سم)</b></td><td>حساس واحد أو لا شيء</td><td>يوضح هل وصل الماء للجذور أم توقف فوقها أم نزل تحتها</td><td>عمق جبهة الابتلال يخبرك هل كمية الري ناسبت عمق الجذور</td><td>كمية ري مبنية على دليل، ولا غسل للسماد تحت الجذور</td></tr></tbody></table></div>
+  <h2>عاير حساسًا سعويًا رخيصًا في 30 دقيقة</h2>
+  <p>المنحنيات المصنعية تفترض تربة معدنية عامة. التربة الرملية والجيرية المصرية وكل بيئة أصص تقرأ بشكل مختلف. معايرة قصيرة واحدة تحوّل مقياسًا نسبيًا إلى رقم تستطيع التصرف بناءً عليه.</p>
+  <ol>
+    <li>خذ نحو 1 كجم من التربة التي ستراقبها. جففها في فرن على 105 °م لمدة 24 ساعة (أو في الشمس 3 أيام ثم ساعتين في فرن المطبخ على أقل درجة). زنها: هذه الكتلة الجافة.</li>
+    <li>أدخل الحساس كاملاً في التربة الجافة داخل وعاء معلوم الحجم (كوب قياس 1 لتر يكفي). سجّل القراءة: هذه نقطة 0%.</li>
+    <li>أضف 100 مل ماء، اخلط جيدًا، انتظر 10 دقائق، أعد إدخال الحساس وسجّل القراءة. 100 مل في لتر تربة = 10% محتوى مائي حجمي.</li>
+    <li>كرر بخطوات 100 مل حتى نحو 40% (رمل) أو 50% (بيئة أصص). توقف عندما يتجمع ماء حر.</li>
+    <li>ارسم قراءة الحساس مقابل % VWC. أوجد خطًا مستقيمًا (أو معادلة تربيعية لبيئات الأصص) في Excel أو R؛ هذه المعادلة هي معايرتك.</li>
+    <li>اضبط نقطتي التطبيق (جاف/مبلل) أو حوّل القراءات بمعادلتك. أعد المعايرة عند تغيير البيئة أو بعد موسم تسميد.</li>
+  </ol>
+  <p>السماد يغيّر النتيجة في المجسات المقاومة وقليلاً في السعوية؛ عاير والتربة على ملوحتها المعتادة. الحساسات البحثية (TEROS 10/12) تأتي بدقة عامة ±0.03 م³/م³ وتصل إلى ±0.01–0.02 بهذا الإجراء نفسه.</p>
   <p class="src">المصادر: shop.ecowitt.com وnetrohome.com وmetergroup.com وvegetronix.com وdelta-t.co.uk وtindie.com؛ الأسعار بتاريخ 24 أكتوبر 2026. روابط الشراء لم تُفعَّل بعد.</p>
 </div>
 </section>
@@ -647,6 +693,8 @@ details.spec[open] summary::before{content:"▾ ";}
   <h2>Ventilation is the feature that matters most</h2>
   <p>A 6×8 greenhouse in full sun gains heat faster than any passive structure can lose it. Without a vent that opens on its own, interior air passes 35 °C on a 20 °C day by late morning, and tomato pollen becomes sterile above about 32 °C. A wax-cylinder automatic opener costs $25–40 and needs no power; if your kit lacks one (every Canopia model above), buy one with the kit.</p>
 
+  <h2>How to decide with these numbers</h2>
+  <div class="tablewrap decide"><table><thead><tr><th>Metric</th><th>Common practice</th><th>What the number adds</th><th>Scientific basis</th><th>Expected effect</th></tr></thead><tbody><tr><td><b>Light transmission (%)</b></td><td>Pick by price or looks</td><td>How much PAR reaches the crop, and how diffuse it is</td><td>Twin-wall PC passes ~80% but diffuses it; diffuse light penetrates the canopy deeper and reduces leaf scorch</td><td>More uniform growth; fewer shade cloth days</td></tr><tr><td><b>Glazing U-value (W/m²K)</b></td><td>Heat with whatever is available</td><td>Night heat loss per m² per degree</td><td>Single film ≈ 6, 4 mm twin-wall ≈ 3.5, 8 mm ≈ 3.0; heating cost scales with U</td><td>Heating cost roughly halved between film and 8 mm twin-wall</td></tr><tr><td><b>Inside temperature and VPD</b></td><td>Open the door when it feels hot</td><td>When the air crosses the crop's limit and how fast</td><td>Tomato pollen is sterile above ~32 °C; VPD above ~1.6 kPa stresses most crops, below ~0.4 kPa invites fungi</td><td>Automatic vent opener and a target band instead of guesswork</td></tr><tr><td><b>Condensation and drip</b></td><td>Accepted as normal</td><td>Which glazing stays dry at night</td><td>Single layers reach dew point first; wet leaves plus warmth is the disease recipe</td><td>Fewer fungal outbreaks without extra spraying</td></tr></tbody></table></div>
   <p class="src">Sources: walmart.com, homedepot.com, wayfair.com, tractorsupply.com, aosom.com, exaco.com; prices Oct 24, 2026. Ohuhu and Yoderbilt specs could not be verified and are omitted. Affiliate links not yet active.</p>
 </div>
 <div class="l" data-lang="ar" dir="rtl">
@@ -681,6 +729,8 @@ details.spec[open] summary::before{content:"▾ ";}
   <h2>التهوية هي الميزة الأهم</h2>
   <p>صوبة 1.8×2.4 م في شمس كاملة تكتسب الحرارة أسرع مما يفقده أي هيكل سلبي. بلا فتحة تهوية تنفتح وحدها، يتجاوز الهواء بالداخل 35 °م في يوم حرارته 20 °م قبل الظهر، وحبوب لقاح الطماطم تصبح عقيمة فوق 32 °م تقريبًا. الفاتح الشمعي الآلي يكلّف 25–40 دولار ولا يحتاج كهرباء؛ إن كانت صوبتك بلا واحد (كل موديلات Canopia أعلاه)، اشتره مع الصوبة. وفي مناخ مصر والخليج هذه ليست رفاهية بل شرط لنجاح الصوبة صيفًا.</p>
 
+  <h2>كيف تتخذ القرار بهذه الأرقام</h2>
+  <div class="tablewrap decide"><table><thead><tr><th>المؤشر</th><th>الممارسة الشائعة</th><th>ما تضيفه القراءة</th><th>الأساس العلمي</th><th>الأثر المتوقع</th></tr></thead><tbody><tr><td><b>نفاذية الضوء (%)</b></td><td>الاختيار بالسعر أو الشكل</td><td>كم من الإشعاع الفعّال يصل للمحصول، ومدى انتشاره</td><td>البولي كربونات مزدوج الجدار يمرر ~80% لكنه ينشره؛ الضوء المنتشر يتغلغل أعمق في المجموع الخضري ويقلل احتراق الأوراق</td><td>نمو أكثر تجانسًا؛ أيام أقل لشبك التظليل</td></tr><tr><td><b>معامل فقد الحرارة U (W/m²K)</b></td><td>التدفئة بما هو متاح</td><td>فقد الحرارة ليلاً لكل متر مربع لكل درجة</td><td>الغطاء المفرد ≈ 6، مزدوج 4 مم ≈ 3.5، 8 مم ≈ 3.0؛ تكلفة التدفئة تتناسب مع U</td><td>تكلفة التدفئة تنخفض للنصف تقريبًا بين الغطاء البلاستيكي و8 مم مزدوج</td></tr><tr><td><b>حرارة الداخل وVPD</b></td><td>فتح الباب عند الإحساس بالحر</td><td>متى يتجاوز الهواء حد المحصول وبأي سرعة</td><td>حبوب لقاح الطماطم تُعقم فوق ~32 °م؛ VPD فوق ~1.6 kPa يجهد معظم المحاصيل وتحت ~0.4 يدعو الفطريات</td><td>فاتح تهوية آلي ونطاق مستهدف بدلاً من التخمين</td></tr><tr><td><b>التكاثف والتنقيط</b></td><td>يُقبل كأمر طبيعي</td><td>أي غطاء يبقى جافًا ليلاً</td><td>الطبقة المفردة تصل لنقطة الندى أولاً؛ أوراق مبللة مع دفء هي وصفة المرض</td><td>تفشيات فطرية أقل بلا رش إضافي</td></tr></tbody></table></div>
   <p class="src">المصادر: walmart.com وhomedepot.com وwayfair.com وtractorsupply.com وaosom.com وexaco.com؛ الأسعار بتاريخ 24 أكتوبر 2026. مواصفات Ohuhu وYoderbilt لم يمكن التحقق منها فحُذفت. روابط الشراء لم تُفعَّل بعد.</p>
 </div>
 </section>
@@ -722,6 +772,8 @@ details.spec[open] summary::before{content:"▾ ";}
   <p>Plants take up water faster than nutrients, so solution EC rises and pH drifts between top-offs. In a 1 L countertop bowl with six mature basil plants, EC can climb 30% in four days. In a 76 L Farmstand it takes weeks. If you travel, buy reservoir volume before you buy pods.</p>
   <p>Deep water culture needs an air stone because roots in still water run out of dissolved oxygen. Kratky skips the pump by leaving an air gap above the solution as the level falls; it works for a single lettuce or herb per container and not for anything larger.</p>
 
+  <h2>How to decide with these numbers</h2>
+  <div class="tablewrap decide"><table><thead><tr><th>Metric</th><th>Common practice</th><th>What the number adds</th><th>Scientific basis</th><th>Expected effect</th></tr></thead><tbody><tr><td><b>Solution EC</b></td><td>Top up with water and hope</td><td>Nutrient strength in the reservoir, read daily</td><td>Plants take up water faster than salts, so EC rises between top-ups; too high burns roots, too low starves</td><td>Steady growth; no tip burn; fertilizer used as intended</td></tr><tr><td><b>Solution pH</b></td><td>Never measured on countertop units</td><td>Whether iron, phosphorus and micronutrients are still available</td><td>Below 5.5 or above 6.5 nutrients precipitate or lock out even if present</td><td>Fewer yellow leaves; less wasted nutrient</td></tr><tr><td><b>Reservoir volume per plant</b></td><td>Buy by number of pods</td><td>How fast EC and pH drift when you are away</td><td>Small reservoirs with many plants drift within days; large ones buffer for weeks</td><td>Choose by litres per plant, not by pod count</td></tr><tr><td><b>Watts per plant</b></td><td>Buy by "grows 9 plants"</td><td>Whether the light can carry the crop you want</td><td>Herbs need ~150–250 µmol/m²/s, fruiting crops 400+; 13 W over 9 pods cannot fruit</td><td>Match the unit to the crop; no leggy, fruitless plants</td></tr></tbody></table></div>
   <p class="src">Sources: scottsmiraclegro.com, clickandgrow.com, letpot.com, risegardens.com, lettucegrow.com, bobvila.com reviews; prices Oct 24, 2026. Affiliate links not yet active.</p>
 </div>
 <div class="l" data-lang="ar" dir="rtl">
@@ -759,6 +811,8 @@ details.spec[open] summary::before{content:"▾ ";}
   <p>تمتص النباتات الماء أسرع من المغذيات، فيرتفع EC المحلول وينحرف pH بين مرات الإكمال. في وعاء سطح 1 لتر فيه ستة نباتات ريحان ناضجة قد يرتفع EC بنسبة 30% خلال أربعة أيام. في Farmstand سعة 76 لتر يستغرق ذلك أسابيع. إن كنت تسافر، اشترِ حجم الخزان قبل عدد المواضع.</p>
   <p>الزراعة المائية العميقة (DWC) تحتاج حجر هواء لأن الجذور في ماء ساكن تستنفد الأكسجين الذائب. طريقة Kratky تستغني عن المضخة بترك فجوة هواء فوق المحلول مع انخفاض مستواه؛ تصلح لخسّة أو عشبة واحدة في كل وعاء ولا تصلح لما هو أكبر.</p>
 
+  <h2>كيف تتخذ القرار بهذه الأرقام</h2>
+  <div class="tablewrap decide"><table><thead><tr><th>المؤشر</th><th>الممارسة الشائعة</th><th>ما تضيفه القراءة</th><th>الأساس العلمي</th><th>الأثر المتوقع</th></tr></thead><tbody><tr><td><b>EC المحلول</b></td><td>الإكمال بالماء والأمل</td><td>قوة المحلول المغذي في الخزان، تُقرأ يوميًا</td><td>النبات يمتص الماء أسرع من الأملاح فيرتفع EC بين مرات الإكمال؛ المرتفع يحرق الجذور والمنخفض يجوّع النبات</td><td>نمو ثابت؛ لا احتراق أطراف؛ سماد يُستخدم كما يجب</td></tr><tr><td><b>pH المحلول</b></td><td>لا يُقاس أبدًا في أجهزة السطح</td><td>هل ما زال الحديد والفوسفور والعناصر الصغرى متاحة</td><td>تحت 5.5 أو فوق 6.5 تترسب العناصر أو تُحجز حتى لو كانت موجودة</td><td>أوراق صفراء أقل؛ هدر سماد أقل</td></tr><tr><td><b>حجم الخزان لكل نبات</b></td><td>الشراء بعدد المواضع</td><td>مدى سرعة انحراف EC وpH عند غيابك</td><td>الخزانات الصغيرة بكثرة نباتات تنحرف خلال أيام؛ الكبيرة تحتمل أسابيع</td><td>الاختيار باللتر لكل نبات لا بعدد المواضع</td></tr><tr><td><b>الواط لكل نبات</b></td><td>الشراء بعبارة «ينمّي 9 نباتات»</td><td>هل الضوء يكفي المحصول الذي تريده</td><td>الأعشاب تحتاج ~150–250 µmol/m²/s والمثمرات 400+؛ 13 واط على 9 مواضع لا تُثمر</td><td>مطابقة الجهاز للمحصول؛ لا نباتات متطاولة بلا ثمار</td></tr></tbody></table></div>
   <p class="src">المصادر: scottsmiraclegro.com وclickandgrow.com وletpot.com وrisegardens.com وlettucegrow.com ومراجعات bobvila.com؛ الأسعار بتاريخ 24 أكتوبر 2026. روابط الشراء لم تُفعَّل بعد.</p>
 </div>
 </section>
@@ -831,6 +885,27 @@ details.spec[open] summary::before{content:"▾ ";}
 </div>
 </section>
 
+
+<!-- ================= GLOSSARY ================= -->
+<section id="glossary" hidden>
+<div class="l" data-lang="en">
+  <p class="eyebrow">Reference · Updated Oct 27, 2026</p>
+  <h1>The numbers behind the reviews, explained</h1>
+  <p class="lede">Ten metrics that decide whether a plant thrives, in the order they appear on this site. Each one says what it measures, the range that matters, and the mistake people make without it.</p>
+  <div class="byline"><div class="avatar">AS</div><div>Written by <b>Ahmed Samy</b>, plant physiologist</div></div>
+  <div class="terms"><div class="term"><div class="t">PPFD</div><p>Photosynthetic photon flux density: photons in the 400–700 nm band landing on one square metre per second (µmol/m²/s). The number that decides plant growth under lights; wattage does not.</p></div><div class="term"><div class="t">DLI</div><p>Daily light integral: PPFD × hours × 0.0036, in mol/m²/day. Lettuce 12–17, herbs 14–20, tomato and pepper 20–30. Above the target, extra hours are wasted electricity.</p></div><div class="term"><div class="t">Efficacy (µmol/J)</div><p>Photons emitted per joule of electricity. Current LED fixtures reach 2.7–3.0; anything under 2.4 is paying for heat.</p></div><div class="term"><div class="t">VWC</div><p>Volumetric water content: the fraction of soil volume that is water (m³/m³ or %). Sandy loam holds about 0.10 at wilting point and 0.25 at field capacity; the whole useful range is narrow, which is why accuracy matters.</p></div><div class="term"><div class="t">Bulk EC vs pore-water EC</div><p>Bulk EC is what a soil sensor measures: the conductivity of soil, water and air together. Pore-water EC is the salinity the roots feel. They are linked through water content (Hilhorst model); a rising bulk EC trend at constant moisture means salts are accumulating.</p></div><div class="term"><div class="t">EC vs TDS</div><p>EC (dS/m or µS/cm) is a measurement; TDS (ppm) is EC multiplied by an assumed factor (0.5–0.7). Use EC and ignore ppm claims; two meters can show different ppm for the same water.</p></div><div class="term"><div class="t">VPD</div><p>Vapour pressure deficit (kPa): how hard the air pulls water from leaves, combining temperature and humidity in one number. Most crops are comfortable at 0.8–1.2; below 0.4 fungi thrive, above 1.6 stomata close.</p></div><div class="term"><div class="t">ET₀ and Kc</div><p>Reference evapotranspiration (FAO Penman-Monteith) from weather data, in mm/day. Multiply by the crop coefficient Kc for the stage (maize 0.3 at emergence, 1.2 at tasselling) to get crop water need. Generic Kc values from tables are often 15–30% off for local varieties and sowing dates.</p></div><div class="term"><div class="t">pH</div><p>Acidity of water or solution. In hydroponics keep 5.5–6.5: iron and manganese lock out above 6.5, calcium and magnesium below 5.5.</p></div><div class="term"><div class="t">Chill hours / chill portions</div><p>Winter cold accumulated by deciduous fruit trees. Chill hours count hours below 7.2 °C; chill portions (dynamic model) also subtract warm spells, so they predict bud break better in warm climates like Egypt.</p></div></div>
+  <p class="src">References: FAO Irrigation and Drainage Paper 56 (ET₀, Kc); Hilhorst (2000) Soil Sci. Soc. Am. J. (pore-water EC); Erez &amp; Fishman dynamic chill model; manufacturer data sheets for sensor accuracy.</p>
+</div>
+<div class="l" data-lang="ar" dir="rtl">
+  <p class="eyebrow">مرجع · تحديث 27 أكتوبر 2026</p>
+  <h1>الأرقام وراء المراجعات، مشروحة</h1>
+  <p class="lede">عشرة مؤشرات تقرر هل ينمو النبات أم لا، بترتيب ظهورها في الموقع. كل مؤشر: ماذا يقيس، والمدى المهم، والخطأ الذي يقع فيه الناس من دونه.</p>
+  <div class="byline"><div class="avatar">أس</div><div>بقلم <b>أحمد سامي</b>، باحث فسيولوجيا نبات</div></div>
+  <div class="terms"><div class="term"><div class="t">PPFD</div><p>كثافة تدفق الفوتونات الضوئية: الفوتونات في نطاق 400–700 نانومتر التي تسقط على متر مربع في الثانية (µmol/m²/s). هذا الرقم هو ما يحدد نمو النبات تحت الإضاءة، لا الواط.</p></div><div class="term"><div class="t">DLI</div><p>التكامل الضوئي اليومي: PPFD × الساعات × 0.0036 بوحدة mol/m²/يوم. الخس 12–17، الأعشاب 14–20، الطماطم والفلفل 20–30. فوق الهدف، الساعات الزائدة كهرباء مهدرة.</p></div><div class="term"><div class="t">الكفاءة (µmol/J)</div><p>الفوتونات المنبعثة لكل جول كهرباء. وحدات LED الحالية تصل 2.7–3.0؛ ما دون 2.4 تدفع فيه ثمن حرارة.</p></div><div class="term"><div class="t">VWC</div><p>المحتوى المائي الحجمي: نسبة حجم التربة المشغول بالماء (م³/م³ أو %). التربة الطميية الرملية تحمل نحو 0.10 عند الذبول و0.25 عند السعة الحقلية؛ المدى المفيد كله ضيق، ولهذا الدقة مهمة.</p></div><div class="term"><div class="t">EC الكلي مقابل EC ماء المسام</div><p>EC الكلي هو ما يقيسه حساس التربة: توصيل التربة والماء والهواء معًا. EC ماء المسام هو الملوحة التي تشعر بها الجذور. يرتبطان عبر المحتوى المائي (نموذج Hilhorst)؛ اتجاه صاعد في EC الكلي عند رطوبة ثابتة يعني تراكم أملاح.</p></div><div class="term"><div class="t">EC مقابل TDS</div><p>EC (dS/m أو µS/cm) قياس حقيقي؛ TDS (ppm) هو EC مضروبًا في معامل مفترض (0.5–0.7). استخدم EC وتجاهل أرقام ppm؛ جهازان قد يعطيان ppm مختلفًا لنفس الماء.</p></div><div class="term"><div class="t">VPD</div><p>العجز في الضغط البخاري (kPa): مدى قوة سحب الهواء للماء من الأوراق، يجمع الحرارة والرطوبة في رقم واحد. معظم المحاصيل مرتاحة عند 0.8–1.2؛ تحت 0.4 تزدهر الفطريات وفوق 1.6 تغلق الثغور.</p></div><div class="term"><div class="t">ET₀ وKc</div><p>البخر-نتح المرجعي (FAO Penman-Monteith) من بيانات الطقس بالملم/يوم. اضربه في معامل المحصول Kc للمرحلة (الذرة 0.3 عند الإنبات و1.2 عند التزهير) لتحصل على احتياج المحصول. قيم Kc العامة من الجداول تخطئ غالبًا بنسبة 15–30% للأصناف والمواعيد المحلية.</p></div><div class="term"><div class="t">pH</div><p>حموضة الماء أو المحلول. في الزراعة المائية حافظ على 5.5–6.5: الحديد والمنجنيز يُحجزان فوق 6.5، والكالسيوم والمغنيسيوم تحت 5.5.</p></div><div class="term"><div class="t">ساعات البرودة / أجزاء البرودة</div><p>البرودة الشتوية المتراكمة لأشجار الفاكهة المتساقطة. ساعات البرودة تعد الساعات تحت 7.2 °م؛ أجزاء البرودة (النموذج الديناميكي) تخصم فترات الدفء أيضًا، فتتنبأ بتفتح البراعم أفضل في المناخات الدافئة كمصر.</p></div></div>
+  <p class="src">المراجع: نشرة الفاو 56 للري والصرف (ET₀ وKc)؛ Hilhorst (2000) Soil Sci. Soc. Am. J. (EC ماء المسام)؛ نموذج Erez وFishman الديناميكي للبرودة؛ صحائف بيانات الشركات لدقة الحساسات.</p>
+</div>
+</section>
+
 <section id="search" hidden>
 <div class="l" data-lang="en"><p class="eyebrow">Search</p><h1 id="sq-en">Results</h1><p class="hits" id="hits-en"></p><div class="seclinks" id="secl-en"></div><div class="catalog" id="res-en"></div></div>
 <div class="l" data-lang="ar" dir="rtl"><p class="eyebrow">بحث</p><h1 id="sq-ar">النتائج</h1><p class="hits" id="hits-ar"></p><div class="seclinks" id="secl-ar"></div><div class="catalog" id="res-ar"></div></div>
@@ -851,7 +926,7 @@ details.spec[open] summary::before{content:"▾ ";}
 
 <script>
 (function(){
-  var views=['home','lights','sensors','greenhouses','hydro','about'];
+  var views=['home','lights','sensors','greenhouses','hydro','about','glossary'];
   var searching=false;
   var lang='en';
   try{var st=localStorage.getItem('gt-lang');if(st==='ar'||st==='en')lang=st;
@@ -884,7 +959,7 @@ details.spec[open] summary::before{content:"▾ ";}
     t.parentNode.querySelectorAll('img').forEach(function(x){x.removeAttribute('aria-current')}); t.setAttribute('aria-current','true');
   });
   // search
-  var SEC={lights:{en:'Grow lights',ar:'إضاءة النمو'},sensors:{en:'Soil sensors',ar:'حساسات التربة'},greenhouses:{en:'Greenhouse kits',ar:'الصوب'},hydro:{en:'Hydroponics',ar:'الزراعة المائية'},about:{en:'About',ar:'من نحن'}};
+  var SEC={lights:{en:'Grow lights',ar:'إضاءة النمو'},sensors:{en:'Soil sensors',ar:'حساسات التربة'},greenhouses:{en:'Greenhouse kits',ar:'الصوب'},hydro:{en:'Hydroponics',ar:'الزراعة المائية'},about:{en:'About',ar:'من نحن'},glossary:{en:'Glossary',ar:'المصطلحات'}};
   var qEl=document.getElementById('q');
   function runSearch(){
     var q=(qEl.value||'').trim().toLowerCase();
